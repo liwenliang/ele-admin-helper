@@ -1,17 +1,23 @@
 <template>
   <div>
-    <h1>表单示例</h1>
-    <yxform
-            ref="demoForm"
-            :emit-validate="form.emitValidate"
-            :emit-reset="form.emitReset"
-            :form="form"
-    />
-    <pre class="codeList">
-        {{ JSON.stringify(form.props, true, '    ') }}
+    <el-row :gutter="100">
+      <el-col :span="12">
+        <h1>表单示例</h1>
+        <yxform
+                ref="demoForm"
+                :emit-validate="form.emitValidate"
+                :emit-reset="form.emitReset"
+                :form="form"
+        />
+        <pre class="codeList">
+{{ JSON.stringify(form.props, true, '    ') }}
     </pre>
-    <h1>表格示例</h1>
-    <yxtable ref="demoTable" :table="table" />
+      </el-col>
+      <el-col :span="12">
+        <h1>表格示例</h1>
+        <yxtable ref="demoTable" :table="table"/>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -19,6 +25,7 @@
   import { cities, cityMaps } from './utils/cities.js'
   import yxform from './components/Form/index.vue'
   import yxtable from './components/Table/index.vue'
+
   const defaultTime = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
   export default {
     components: {
@@ -82,11 +89,11 @@
               progress: 90
             }
           ],
-          sortChange: function() {},
+          sortChange: function () {},
           select: {
             isSelectable: true,
             selectChange: this.onSelectChange,
-            selectable: function(row, index) {
+            selectable: function (row, index) {
               if (row.sex === '0') {
                 return false
               } else {
@@ -125,6 +132,7 @@
               prop: 'areaCode',
               type: 'tags',
               label: '屏蔽地域',
+              width: 200,
               options: cityMaps
             },
             {
@@ -272,7 +280,7 @@
               label: 'customFilter',
               type: 'customFilter',
               width: '110',
-              filter: function(val, row) {
+              filter: function (val, row) {
                 return `<h3 style="text-align: center;">${val}%</h3>`
               }
             },
