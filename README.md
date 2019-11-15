@@ -9,4 +9,8 @@ npm install ele-admin-helper --save-dev
 
 import EleAdminHelper from 'ele-admin-helper'
 Vue.use(EleAdminHelper)
+
+# 运行demo
+npm install
+npm run dev
 ```
