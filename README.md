@@ -1,18 +1,14 @@
-# ele-admin-helper1
+# ELEADMINHELPER 
+
+> 通过这个二次封装的组件可以比较方便的使用ElementUI的Form和Table，满足一般后台需要
 
 > A Vue.js project
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
+npm install ele-admin-helper --save-dev
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+import EleAdminHelper from 'ele-admin-helper'
+Vue.use(EleAdminHelper)
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
