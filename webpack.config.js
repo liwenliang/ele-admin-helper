@@ -94,6 +94,10 @@ module.exports = {
   },
   performance: {
     hints: false
+  },
+  externals: {
+    'vue': 'Vue',
+    'element-ui': 'ELEMENT'
   }
 }
 
