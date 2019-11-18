@@ -1,6 +1,5 @@
 import yxform from './src/components/Form/index.vue'
 import yxtable from './src/components/Table/index.vue'
-import _Vue from 'vue'
 
 const MyPlugin = {}
 MyPlugin.install = Vue => {
