@@ -6,6 +6,8 @@
     :size="form.size"
     :label-position="form.labelPosition"
     :label-width="form.labelWidth"
+    class="ele-admin-helper-grid"
+    :class="getGridClass(form.gridNum)"
     @submit.native.prevent
   >
     <template>
@@ -132,7 +134,41 @@ export default {
         }
       }
       return rules
+    },
+
+    /**
+     * 有时候一列的效果太差，需要有多列的表单形式，可以使用gridNum参数进行设置
+     * @param gridNum
+     * @returns {*|string}
+     */
+    getGridClass(gridNum) {
+      let classMap = {
+        1: '',
+        2: 'ele-admin-helper-grid-two',
+        3: 'ele-admin-helper-grid-three',
+        4: 'ele-admin-helper-grid-four'
+      }
+      return classMap[gridNum] || ''
     }
   }
 }
 </script>
+
+<style type="text/css" scoped>
+  .ele-admin-helper-grid {
+    display: grid;
+    grid-column-gap: 10px;
+  }
+
+  .ele-admin-helper-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ele-admin-helper-grid-three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ele-admin-helper-grid-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+</style>

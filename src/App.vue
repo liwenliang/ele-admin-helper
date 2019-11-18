@@ -298,6 +298,7 @@
           validateSuccess: this.validateSuccess,
           validateFaild: this.validateFaild,
           inline: false,
+          gridNum: 2,
           // style: 'width: 500px',
           labelWidth: '120px',
           labelPosition: 'right',
