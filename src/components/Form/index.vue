@@ -6,7 +6,6 @@
     :size="form.size"
     :label-position="form.labelPosition"
     :label-width="form.labelWidth"
-    class="ele-admin-helper-grid"
     :class="getGridClass(form.gridNum)"
     @submit.native.prevent
   >
@@ -143,10 +142,9 @@ export default {
      */
     getGridClass(gridNum) {
       let classMap = {
-        1: '',
-        2: 'ele-admin-helper-grid-two',
-        3: 'ele-admin-helper-grid-three',
-        4: 'ele-admin-helper-grid-four'
+        2: 'ele-admin-helper-grid ele-admin-helper-grid-two',
+        3: 'ele-admin-helper-grid ele-admin-helper-grid-three',
+        4: 'ele-admin-helper-grid ele-admin-helper-grid-four'
       }
       return classMap[gridNum] || ''
     }
