@@ -1,7 +1,7 @@
 {
   "name": "ele-admin-helper",
   "description": "方便使用ElementUI的table和form",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "author": "liwenliang <792831375@qq.com>",
   "license": "MIT",
   "private": false,
