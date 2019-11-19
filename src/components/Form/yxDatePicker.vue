@@ -2,7 +2,7 @@
 <template>
   <el-date-picker
     v-model="form.props[prop]"
-    :style="config.style"
+    :style="config.style||'width:100%;'"
     :type="config.type"
     :placeholder="config.placeholder"
     :start-placeholder="config.startPlaceholder || ''"

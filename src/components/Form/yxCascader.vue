@@ -8,6 +8,7 @@
     :props="config.props"
     :filterable="true"
     :placeholder="config.placeholder"
+    @change="onChange"
   />
 </template>
 
@@ -30,6 +31,11 @@ export default {
     prop: {
       type: String,
       default: ''
+    }
+  },
+  methods: {
+    onChange(env) {
+      this.config.onChange && this.config.onChange.call(null, env)
     }
   }
 }
