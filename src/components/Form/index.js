@@ -10,6 +10,7 @@ import yxCheckboxGroup from './yxCheckboxGroup.vue'
 import yxRadio from './yxRadio.vue'
 import yxTree from './yxTree.vue'
 import yxWeekTimeSelect from './yxWeekTimeSelect.vue'
+import yxCascader from './YxCascader.vue'
 
 export default {
   yxInput,
@@ -23,5 +24,6 @@ export default {
   yxCheckboxGroup,
   yxRadio,
   yxTree,
-  yxWeekTimeSelect
+  yxWeekTimeSelect,
+  yxCascader
 }
