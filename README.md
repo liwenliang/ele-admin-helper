@@ -32,15 +32,15 @@ Vue.use(EleAdminHelper)
 
 ```javascript
 {
-    emitValidate: false,  // 是否触发表单验证，使用的时候只要修改这个字段既可以触发表单验证
-    emitReset: false, // 是否触发表单重置，修改该字段的值会触发表单重置
-    validateSuccess(){}, // 表单验证成功回调事件，通常成功就发送请求了
-    validateFaild(){}, // 表单验证失败回调事件，通常失败会有提示
-    inline: false, // 是否内联内联效果，默认是一行一个表单项
+    emitValidate: false,      // 是否触发表单验证，使用的时候只要修改这个字段既可以触发表单验证
+    emitReset: false,         // 是否触发表单重置，修改该字段的值会触发表单重置
+    validateSuccess(){},      // 表单验证成功回调事件，通常成功就发送请求了
+    validateFaild(){},        // 表单验证失败回调事件，通常失败会有提示
+    inline: false,            // 是否内联内联效果，默认是一行一个表单项
     // style: 'width: 500px', // 表单宽度，一般用不着
-    labelWidth: '120px',  // 表单项lable的宽度
-    labelPosition: 'right', // 表单项lable的位置
-    props: { // 表单对应的所有字段，相当于form里的name字段，这里要注意的是字段类型
+    labelWidth: '120px',      // 表单项lable的宽度
+    labelPosition: 'right',   // 表单项lable的位置
+    props: {                  // 表单对应的所有字段，相当于form里的name字段，这里要注意的是字段类型
       name: '一下科技',
       sex: '1',
       age: 7,
@@ -55,63 +55,63 @@ Vue.use(EleAdminHelper)
     },
     attributes: [
       {
-        type: 'yxDatePicker', // 日期选择器组件
-        prop: 'dateRange', // 对应form里的prop某个字段，不要重复
+        type: 'yxDatePicker',             // 日期选择器组件
+        prop: 'dateRange',                // 对应form里的prop某个字段，不要重复
         label: '日期范围',
         config: {
-          type: 'daterange', // 表示日期范围形式
-          format: 'yyyy 年 MM 月 dd 日', // 展现形式
-          valueFormat: 'yyyy-MM-dd', // 值的形式，也对应prop最后的值
-          startPlaceholder: '开始日期', // 开始日期的placeholder
-          endPlaceholder: '结束日期' // 结束日期的placeholder
+          type: 'daterange',              // 表示日期范围形式
+          format: 'yyyy 年 MM 月 dd 日',   // 展现形式
+          valueFormat: 'yyyy-MM-dd',      // 值的形式，也对应prop最后的值
+          startPlaceholder: '开始日期',    // 开始日期的placeholder
+          endPlaceholder: '结束日期'       // 结束日期的placeholder
         }
       },
       {
-        type: 'yxTimePicker', // 时间选择器组件
+        type: 'yxTimePicker',             // 时间选择器组件
         prop: 'timeRange',
         label: '时间范围',
         config: {
-          isRange: true, // 表示是否为范围选择器，如果为false则对应prop为一个时间字符串，如果为true则对应prop为一个数组
-          format: 'HH:mm', // 展现形式
-          valueFormat: 'HH:mm', // value的形式
-          startPlaceholder: '开始时间', // 开始时间的placeholder
-          endPlaceholder: '结束时间' // 结束事件的placeholder
+          isRange: true,                  // 表示是否为范围选择器，如果为false则对应prop为一个时间字符串，如果为true则对应prop为一个数组
+          format: 'HH:mm',                // 展现形式
+          valueFormat: 'HH:mm',           // value的形式
+          startPlaceholder: '开始时间',    // 开始时间的placeholder
+          endPlaceholder: '结束时间'       // 结束事件的placeholder
         }
       },
       {
-        type: 'yxInput',  // 输入框组件
+        type: 'yxInput',            // 输入框组件
         prop: 'name',
         label: '姓名',
-        rules: ['required'], // 表单验证规则，内置验证类型可以直接传字符串，如果不满足可以传验证对象
+        rules: ['required'],        // 表单验证规则，内置验证类型可以直接传字符串，如果不满足可以传验证对象
         config: {
-          type: 'text', // 输入框类型
-          placeholder: '请输入姓名', // 输入框的placeholder
-          disabled: false, // 几乎每个组件都有disabled属性，表示是否可用
-          style: 'width: 220px;' // 输入框的宽度
+          type: 'text',             // 输入框类型
+          placeholder: '请输入姓名',  // 输入框的placeholder
+          disabled: false,          // 几乎每个组件都有disabled属性，表示是否可用
+          style: 'width: 220px;'    // 输入框的宽度
         }
       },
       {
-        type: 'yxWeekTimeSelect', // 不连续的日期选择组件，某些场景会用到，比较定制的一个组件
+        type: 'yxWeekTimeSelect',   // 不连续的日期选择组件，某些场景会用到，比较定制的一个组件
         prop: 'timePeriod',
         label: '屏蔽时间段'
       },
       {
-        type: 'yxTree', // 树形组件
+        type: 'yxTree',     // 树形组件
         prop: 'areaCode',
         label: '屏蔽地域',
         config: {
-          options: cities // label value children形式
+          options: cities   // label value children形式
         }
       },
       {
-        type: 'yxSelect', // 下拉框组件
+        type: 'yxSelect',       // 下拉框组件
         prop: 'sex',
         label: '性别',
-        rules: ['required'], // 验证规则
+        rules: ['required'],    // 验证规则
         config: {
           disabled: false,
           style: 'width: 220px;',
-          options: [  // 下拉选项，label value形式
+          options: [            // 下拉选项，label value形式
             {
               label: '男',
               value: '0',
@@ -126,7 +126,7 @@ Vue.use(EleAdminHelper)
         }
       },
       {
-        type: 'yxInputNumber', // 数字输入框
+        type: 'yxInputNumber',      // 数字输入框
         prop: 'age',
         label: '年龄',
         rules: ['required', 'int'], // 验证规则
@@ -139,14 +139,14 @@ Vue.use(EleAdminHelper)
         }
       },
       {
-        type: 'yxDatePicker', // 日期选择框
+        type: 'yxDatePicker',           // 日期选择框
         prop: 'birthday',
         label: '生日',
         rules: ['required'],
         config: {
           type: 'date',
           format: 'yyyy 年 MM 月 dd 日', // 日期在页面上的展现形式
-          valueFormat: 'timestamp', // 对应value的字段的形式
+          valueFormat: 'timestamp',     // 对应value的字段的形式
           placeholder: '请输入生日',
           disabled: false
         }
@@ -231,16 +231,16 @@ Vue.use(EleAdminHelper)
         }
       },
       {
-        type: 'yxCascader', // 级联选择器
+        type: 'yxCascader',       // 级联选择器
         prop: 'cascader',
         label: '城市',
         config: {
           placeholder: '请选择城市',
           showAllLevels: true,
           props: {
-            emitPath: false // 只需要最后一级的字段
+            emitPath: false       // 只需要最后一级的字段
           },
-          options: cities // label value形式
+          options: cities         // label value形式
         }
       },
       {
@@ -274,12 +274,12 @@ template
 data
 ```javascript
 {
-    data: [], // 表格数据，通常是通过接口请求回来复制给这个字段
-    sortChange() {}, // 排序发生变化时触发的事件回调
+    data: [],                               // 表格数据，通常是通过接口请求回来复制给这个字段
+    sortChange() {},                        // 排序发生变化时触发的事件回调
     select: {
-      isSelectable: true, // 表格的每一项是否能够勾选
-      selectChange: this.onSelectChange, // 表格被勾选上以后触发的事件回调
-      selectable(row, index) { // 表格项是否允许被勾选，通过条件可以让某些条件下的项目不可选中
+      isSelectable: true,                   // 表格的每一项是否能够勾选
+      selectChange: this.onSelectChange,    // 表格被勾选上以后触发的事件回调
+      selectable(row, index) {              // 表格项是否允许被勾选，通过条件可以让某些条件下的项目不可选中
         if (row.sex === '0') {
           return false
         } else {
